@@ -10,6 +10,8 @@ public class Movement : MonoBehaviour {
 
     public float speed;
 
+    public float jump;
+
     void Update()
     {
         //transform.Rotate(Vector3.up, -turn * Time.deltaTime);
@@ -19,5 +21,10 @@ public class Movement : MonoBehaviour {
         //transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
         transform.Translate(Vector3.up * Time.deltaTime * speed);
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.Translate(Vector3.up * jump * Time.deltaTime, Space.World);
+        }
     }
 }
